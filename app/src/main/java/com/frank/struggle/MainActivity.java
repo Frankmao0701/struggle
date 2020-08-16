@@ -17,5 +17,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d("mwq","hello world!");
         Log.d("mwq","dev_frank hello world!");
         Log.d("mwq","dev_frank hello world! at home");
+        Log.d("mwq","dev_frank hello world! at home second");
     }
 }
