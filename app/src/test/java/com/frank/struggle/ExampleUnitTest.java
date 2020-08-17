@@ -3,6 +3,7 @@ package com.frank.struggle;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,8 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
 //        atomicTest();
 //        jsonTest();
-        eyeTracking();
+//        eyeTracking();
+        getCountFromTable();
     }
 
     /**
@@ -60,6 +62,7 @@ public class ExampleUnitTest {
     }
 
     private void eyeTracking() {
+        HashMap<Integer, Integer> countMap = new HashMap<>();
         int[] array = new int[5];
         for (int i = 0; i < 10; i++) {
             int pos = i % 5;
@@ -75,6 +78,17 @@ public class ExampleUnitTest {
             }
         }
         System.out.println("array == " + Arrays.toString(array));
+
+        for (int i = 0; i < array.length; i++) {
+            if (countMap.get(array[i]) == null) {
+                countMap.put(array[i], 1);
+            } else {
+                countMap.put(array[i], countMap.get(array[i]) + 1);
+            }
+        }
+
+        System.out.println("map == " + countMap.toString());
+
 
         int index = 0;
         while (index < array.length) {
@@ -100,5 +114,27 @@ public class ExampleUnitTest {
             System.out.println(start++ + "出现了" + (-1) * countResult + "次");
         }
 
+    }
+
+    /**
+     * 求数组中元素出现的最大次数 空间换时间
+     */
+    private void getCountFromTable() {
+        int[] arr = new int[]{0, 3, 0, 3, 2, 0, 1, 0, 2, 3};
+        int n = arr.length;
+        int[] count = new int[4]; // count数组的大小理论上是第一个数组值的最大值+1
+        int res = 0;
+        int max_count = 0;
+        for (int i = 0; i < n; i++) {
+            // 获取第一个数组的值，在第二个数组值自增 第二个数组index为第一个数组的值，第二个数组的值为出现的最大次数。空间换时间
+            count[arr[i]]++;
+        }
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] >= max_count) { // 如果这个地方是大于，若出现了两个数字出现次数相同的情况则取前面的值，若改为>=则取后面的值
+                max_count = count[i];
+                res = i;
+            }
+        }
+        System.out.println("max count == " + res);
     }
 }
