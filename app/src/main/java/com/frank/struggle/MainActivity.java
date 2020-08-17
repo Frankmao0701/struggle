@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.bumptech.glide.Glide;
+
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("mwq","hello world!");
         Log.d("mwq","dev_frank hello world!");
+        Glide.with(this).load("");
         Log.d("mwq","dev_frank hello world! at home");
         Log.d("mwq","dev_frank hello world! at home second");
         Log.d("mwq","dev_frank hello world! at home third");
