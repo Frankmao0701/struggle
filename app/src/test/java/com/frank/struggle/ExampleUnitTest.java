@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -23,7 +25,9 @@ public class ExampleUnitTest {
 //        atomicTest();
 //        jsonTest();
 //        eyeTracking();
-        getCountFromTable();
+//        getCountFromTable();
+//        testArraryList();
+        getCountFromQueue();
     }
 
     /**
@@ -136,5 +140,50 @@ public class ExampleUnitTest {
             }
         }
         System.out.println("max count == " + res);
+    }
+
+
+    private void getCountFromQueue() {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(0);
+        queue.offer(2);
+        queue.offer(5);
+        queue.offer(3);
+        queue.offer(5);
+        queue.offer(3);
+        queue.offer(5);
+        queue.offer(2);
+        queue.offer(1);
+        queue.offer(2);
+        queue.offer(1);
+//        int[] arr = new int[]{0, 3, 0, 3, 2, 0, 1, 0, 2, 3};
+        int n = queue.size();
+        int[] count = new int[6]; // count数组的大小理论上是第一个数组值的最大值+1
+        int res = 0;
+        int max_count = 0;
+        for (int i = 0; i < n; i++) {
+            // 获取第一个数组的值，在第二个数组值自增 第二个数组index为第一个数组的值，第二个数组的值为出现的最大次数。空间换时间
+            count[queue.poll()]++;
+        }
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] >= max_count) { // 如果这个地方是大于，若出现了两个数字出现次数相同的情况则取前面的值，若改为>=则取后面的值
+                max_count = count[i];
+                res = i;
+            }
+        }
+        System.out.println("max count == " + res);
+    }
+
+
+
+    private void testArraryList() {
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < 20; i++) {
+            if (queue.size() >= 15) {
+                queue.poll();
+            }
+            queue.offer(i);
+        }
+        System.out.println("list == " + queue.toString());
     }
 }
