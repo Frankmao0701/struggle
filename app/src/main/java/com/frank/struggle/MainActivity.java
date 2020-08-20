@@ -11,16 +11,16 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("mwq","hello world!");
-        Log.d("mwq","dev_frank hello world!");
-        Glide.with(this).load("");
-        Log.d("mwq","dev_frank hello world! at home");
-        Log.d("mwq","dev_frank hello world! at home second");
-        Log.d("mwq","dev_frank hello world! at home third");
+        ClassLoader classLoader = this.getClass().getClassLoader();
+        while (classLoader != null) {
+            Log.d(TAG, "ClassLoader == " + classLoader.toString());
+            classLoader = classLoader.getParent();
+        }
     }
 }
