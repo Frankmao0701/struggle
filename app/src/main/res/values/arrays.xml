@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="voice_print_particle_anim_fullscreen">
+        <item>@mipmap/particle_fullscreen_0000</item>
+        <item>@mipmap/particle_fullscreen_0001</item>
+        <item>@mipmap/particle_fullscreen_0002</item>
+        <item>@mipmap/particle_fullscreen_0003</item>
+        <item>@mipmap/particle_fullscreen_0004</item>
+        <item>@mipmap/particle_fullscreen_0005</item>
+        <item>@mipmap/particle_fullscreen_0006</item>
+        <item>@mipmap/particle_fullscreen_0007</item>
+        <item>@mipmap/particle_fullscreen_0008</item>
+        <item>@mipmap/particle_fullscreen_0009</item>
+        <item>@mipmap/particle_fullscreen_0010</item>
+        <item>@mipmap/particle_fullscreen_0011</item>
+        <item>@mipmap/particle_fullscreen_0012</item>
+        <item>@mipmap/particle_fullscreen_0013</item>
+        <item>@mipmap/particle_fullscreen_0014</item>
+        <item>@mipmap/particle_fullscreen_0015</item>
+        <item>@mipmap/particle_fullscreen_0016</item>
+        <item>@mipmap/particle_fullscreen_0017</item>
+        <item>@mipmap/particle_fullscreen_0018</item>
+        <item>@mipmap/particle_fullscreen_0019</item>
+        <item>@mipmap/particle_fullscreen_0020</item>
+        <item>@mipmap/particle_fullscreen_0021</item>
+        <item>@mipmap/particle_fullscreen_0022</item>
+        <item>@mipmap/particle_fullscreen_0023</item>
+        <item>@mipmap/particle_fullscreen_0024</item>
+        <item>@mipmap/particle_fullscreen_0025</item>
+        <item>@mipmap/particle_fullscreen_0026</item>
+        <item>@mipmap/particle_fullscreen_0027</item>
+        <item>@mipmap/particle_fullscreen_0028</item>
+        <item>@mipmap/particle_fullscreen_0029</item>
+        <item>@mipmap/particle_fullscreen_0030</item>
+        <item>@mipmap/particle_fullscreen_0031</item>
+        <item>@mipmap/particle_fullscreen_0032</item>
+
+    </integer-array>
+    <array name="particel_anim">
+        <item>@mipmap/particle_fullscreen_0000</item>
+        <item>@mipmap/particle_fullscreen_0001</item>
+        <item>@mipmap/particle_fullscreen_0002</item>
+        <item>@mipmap/particle_fullscreen_0003</item>
+        <item>@mipmap/particle_fullscreen_0004</item>
+        <item>@mipmap/particle_fullscreen_0005</item>
+        <item>@mipmap/particle_fullscreen_0006</item>
+        <item>@mipmap/particle_fullscreen_0007</item>
+        <item>@mipmap/particle_fullscreen_0008</item>
+        <item>@mipmap/particle_fullscreen_0009</item>
+        <item>@mipmap/particle_fullscreen_0010</item>
+        <item>@mipmap/particle_fullscreen_0011</item>
+        <item>@mipmap/particle_fullscreen_0012</item>
+        <item>@mipmap/particle_fullscreen_0013</item>
+        <item>@mipmap/particle_fullscreen_0014</item>
+        <item>@mipmap/particle_fullscreen_0015</item>
+        <item>@mipmap/particle_fullscreen_0016</item>
+        <item>@mipmap/particle_fullscreen_0017</item>
+        <item>@mipmap/particle_fullscreen_0018</item>
+        <item>@mipmap/particle_fullscreen_0019</item>
+        <item>@mipmap/particle_fullscreen_0020</item>
+        <item>@mipmap/particle_fullscreen_0021</item>
+        <item>@mipmap/particle_fullscreen_0022</item>
+        <item>@mipmap/particle_fullscreen_0023</item>
+        <item>@mipmap/particle_fullscreen_0024</item>
+        <item>@mipmap/particle_fullscreen_0025</item>
+        <item>@mipmap/particle_fullscreen_0026</item>
+        <item>@mipmap/particle_fullscreen_0027</item>
+        <item>@mipmap/particle_fullscreen_0028</item>
+        <item>@mipmap/particle_fullscreen_0029</item>
+        <item>@mipmap/particle_fullscreen_0030</item>
+        <item>@mipmap/particle_fullscreen_0031</item>
+        <item>@mipmap/particle_fullscreen_0032</item>
+    </array>
+</resources>

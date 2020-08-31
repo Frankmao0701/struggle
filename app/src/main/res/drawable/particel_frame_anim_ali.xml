@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item app:drawable="@mipmap/particle_fullscreen_0000" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0001" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0002" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0003" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0004" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0005" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0006" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0007" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0008" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0009" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0010" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0011" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0012" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0013" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0014" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0015" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0016" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0017" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0018" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0019" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0020" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0021" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0022" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0023" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0024" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0025" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0026" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0027" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0028" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0029" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0030" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0031" app:duration="100"/>
+    <item app:drawable="@mipmap/particle_fullscreen_0032" app:duration="100"/>
+
+    </animation-list>
