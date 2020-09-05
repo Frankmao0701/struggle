@@ -52,7 +52,6 @@ public class FrameAnimActivity extends AppCompatActivity implements View.OnClick
         btn_stop.setOnClickListener(this);
         btn_single.setOnClickListener(this);
         btn_other.setOnClickListener(this);
-
     }
 
     @Override

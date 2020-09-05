@@ -22,7 +22,7 @@ public class FrameAnimator implements Animatable {
 
     private AnimationRes mAnimRes;
 
-    private static final int DEFAULT_SIZE = 5;
+    private static final int DEFAULT_SIZE = 1;
 
     private ArrayBlockingQueue<Drawable> mFrameQueue;
 
