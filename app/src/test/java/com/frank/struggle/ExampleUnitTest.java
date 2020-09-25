@@ -1,11 +1,20 @@
 package com.frank.struggle;
 
+import com.frank.struggle.designmode.observer.ConcreteObsevale;
+import com.frank.struggle.designmode.observer.ConcreteObsever;
+import com.frank.struggle.designmode.proxy.DynamicProxy;
+import com.frank.struggle.designmode.proxy.ILawsuit;
+import com.frank.struggle.designmode.proxy.XiaoMao;
+
 import org.junit.Test;
 
+import java.io.FileInputStream;
+import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -27,7 +36,52 @@ public class ExampleUnitTest {
 //        eyeTracking();
 //        getCountFromTable();
 //        testArraryList();
-        getCountFromQueue();
+//        getCountFromQueue();
+
+
+//        Node head = initLinkedList(10);
+//
+//        printLinkedList(head);
+//
+//        System.out.println("**************");
+//
+//        //反转链表
+//        Node node = reveseNode(head);
+//        printLinkedList(node);
+
+
+//        buddleSort();
+//
+//        int[] arr = new int[]{5, 2, 3, 6, 1, 4, 8, 7, 9, 11, 10, 15, 12, 13, 14};
+//        for (int value : arr) {
+//            System.out.println(value + "");
+//        }
+//        System.out.println("------------------------");
+//        quickSort(arr, 0, arr.length - 1);
+//        for (int value : arr) {
+//            System.out.println(value + "");
+//        }
+
+        ConcreteObsever obsever1 = new ConcreteObsever();
+        ConcreteObsever obsever2 = new ConcreteObsever();
+        ConcreteObsevale obsevalle = new ConcreteObsevale();
+        obsevalle.addObserver(obsever1);
+        obsevalle.addObserver(obsever2);
+        obsevalle.postNewPublication("发送新的消息");
+
+
+        ILawsuit xiaomao = new XiaoMao();
+        // 构造一个动态代理
+        DynamicProxy proxy = new DynamicProxy(xiaomao);
+        // 获取被代理类的ClassLoader
+        ClassLoader loader = xiaomao.getClass().getClassLoader();
+        // 动态构造一个代理者
+        ILawsuit lawyer = (ILawsuit) Proxy.newProxyInstance(loader, new Class[]{ILawsuit.class}, proxy);
+
+        lawyer.submit();
+        lawyer.burden();
+        lawyer.defend();
+        lawyer.finish();
     }
 
     /**
@@ -175,7 +229,6 @@ public class ExampleUnitTest {
     }
 
 
-
     private void testArraryList() {
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < 20; i++) {
@@ -185,5 +238,155 @@ public class ExampleUnitTest {
             queue.offer(i);
         }
         System.out.println("list == " + queue.toString());
+    }
+
+    public static class Node<T> {
+        private T value;    //节点值
+        private Node<T> next;   //后继节点
+
+        public Node() {
+        }
+
+        public Node(T value, Node<T> next) {
+            this.value = value;
+            this.next = next;
+        }
+    }
+
+    private Node reveseNode(Node head) {
+//        Node prev = null;
+//        Node now = node;
+//        while (now != null) {
+//            Node next = now.next;
+//            now.next = prev;
+//            prev = now;
+//            now = next;
+//        }
+//        return prev;
+
+        Node prev = null;
+        Node next = null;
+        while (head.next != null) {
+            next = head.next;   //保存下一个节点
+            head.next = prev;   //重置next
+            prev = head;    //保存当前节点
+            head = next;
+        }
+        head.next = prev;
+        return head;
+    }
+
+    /**
+     * 初始化链表
+     **/
+    private Node initLinkedList(int num) {
+        Node head = new Node(0, null);
+        Node cur = head;
+        for (int i = 1; i < num; i++) {
+            cur.next = new Node(i, null);
+            cur = cur.next;
+        }
+        return head;
+    }
+
+    /**
+     * 打印链表
+     **/
+    private void printLinkedList(Node head) {
+        Node node = head;
+        while (node != null) {
+            System.out.println(node.value);
+            node = node.next;
+        }
+    }
+
+    public void buddleSort() {
+        int[] arr = new int[]{5, 2, 3, 6, 1, 4};
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        for (int value : arr) {
+            System.out.println("arr == " + value);
+        }
+
+    }
+
+    public void quickSort(int[] arr, int low, int high) {
+        int start = low;
+        int end = high;
+        int key = arr[low];
+        while (end > start) {
+            while (end > start && arr[end] >= key) {
+                end--;
+            }
+            if (arr[end] < key) {
+                int temp = arr[end];
+                arr[end] = arr[start];
+                arr[start] = temp;
+            }
+            while (end > start && arr[start] <= key) {
+                start++;
+            }
+            if (arr[start] >= key) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+            }
+        }
+        if (start > low) {
+            quickSort(arr, low, start - 1);
+        }
+        if (end < high) {
+            quickSort(arr, end + 1, high);
+        }
+    }
+
+    public Node Reverse(Node head) {
+        Node prev = null;
+        Node next = null;
+        while (head.next != null) {
+            next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        head.next = prev;
+        return head;
+    }
+
+    public void sort(int[] arr, int low, int high) {
+        int start = low;
+        int end = high;
+        int key = arr[low];
+        while (end > start) {
+            while (end > start && arr[end] >= key) {
+                end--;
+            }
+            if (arr[end] < key) {
+                int temp = arr[end];
+                arr[end] = arr[start];
+                arr[start] = temp;
+            }
+            while (end > start && arr[start] <= key) {
+                start++;
+            }
+            if (arr[start] >= key) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+            }
+        }
+        if (start > low) {
+            sort(arr, low, start - 1);
+        }
+        if (end < high) {
+            sort(arr, end + 1, high);
+        }
     }
 }

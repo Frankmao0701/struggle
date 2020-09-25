@@ -1,17 +1,11 @@
 package com.frank.struggle;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import com.bumptech.glide.Glide;
-
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicStampedReference;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -28,5 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(activity, FrameAnimActivity.class));
             }
         });
+
+
     }
 }
